@@ -1,42 +1,24 @@
 #include<stdio.h>
+#include<string.h>
 int main()
 {
-    char a[101];
-    int i,count=0;
+    char a[101],b[5]="hello";
+    int i,len,j=0,count=0;
 
-    scanf("%s",a);
+    scanf("%s",&a);
 
-    for(i=0; a[i]!='\0'; i++)
+    len = strlen(a);
+
+    for(i=0; i<len; i++)
     {
-        if(count<1)
+        if(a[i]==b[j])
         {
-            if(a[i]=='h')
-                count++;
+            count++;
+            j++;
         }
 
-        if(count>0 && count<2)
-        {
-            if(a[i]=='e')
-                count++;
-        }
-
-         if(count>1 && count<3)
-        {
-            if(a[i]=='l')
-                count++;
-        }
-
-         if(count>2 && count<4)
-        {
-            if(a[i+1]=='l')
-                count++;
-        }
-
-         if(count>3 && count<5)
-        {
-            if(a[i]=='o')
-                count++;
-        }
+        if(count==5)
+            break;
     }
 
     if(count==5)
